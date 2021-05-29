@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+
+void ft_is_negativ()
+{
+  int res =1;
+
+  while(res <= 9)
+    {
+	printf("%d",res);
+	res+=1;
+    }
+}
+
+int main ()
+{
+  ft_is_negativ();
+  printf("\n");
+  return (0) ;
+}

@@ -4,17 +4,42 @@
 void ft_print_comb()
 {
   char str[] = "012";
-  int i = 2;
-  while (str[i] <= 57)
+  int stop = 0;
+  int count = 0;
+  while (stop == 0)
     {
-      if(str[i] == 57)
+     
+      if(str[2] == 57)
 	{
-	  printf("%s,",str);
-	  str[i]-=(57+str[i+1]);
-	  str[i-1]+=1;
+	  printf("%s, ",str);
+	  str[2]-=(count-1);
+	  str[1]+=1;
+	  count = 0;
+
+	  if (str[1] == 56 )
+	    {
+	      str[0]+=1;
+	      str[1] =str[0]+1;
+	      str[2]= str[1]+1;
+	    if(str[0]== '7' && str[1]== '8' && str[2] == '9')
+	    {
+	      printf("%s",str);
+	      stop +=1;
+	    }
+	    else
+	      {
+		 printf("%s, ",str);
+	      }
+	     
+	    }
+	 
 	}
-      printf("%s,",str);
-      str[i]+=1;
+      else{
+      printf("%s, ",str);
+      str[2]+=1;
+      count+=1;
+      }
+
     }
 
 

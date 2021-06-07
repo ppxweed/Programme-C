@@ -1,53 +1,41 @@
 #include <stdio.h>
 
 
-void ft_print_comb()
+void ft_print_comb2()
 {
-  char str[] = "012";
-  int stop = 0;
-  int count = 0;
-  while (stop == 0)
+  char str[] = "00 01";
+  int loop = 0;
+  int count =0;
+  while(loop == 0)
     {
-     
-      if(str[2] == 57)
+      if(str[4] == '9')
 	{
-	  printf("%s, ",str);
-	  str[2]-=(count-1);
-	  str[1]+=1;
-	  count = 0;
-
-	  if (str[1] == 56 )
-	    {
-	      str[0]+=1;
-	      str[1] =str[0]+1;
-	      str[2]= str[1]+1;
-	    if(str[0]== '7' && str[1]== '8' && str[2] == '9')
-	    {
-	      printf("%s",str);
-	      stop +=1;
-	    }
-	    else
-	      {
-		 printf("%s, ",str);
-	      }
-	     
-	    }
-	 
+	  str[3]+=1;
+	  str[4]+=(count+1);
+	  count+=1;
+	  printf("%c ,", str)
 	}
-      else{
-      printf("%s, ",str);
-      str[2]+=1;
-      count+=1;
-      }
+      else if (str[4] == '9' && str[3] == '9')
+	{
+	  str[3]= '0';
+	  str[4]+=(count+1) ;
+	  str[1] +=1;
+	  printf("%c ,", str)
+	}
+	else if (str[4] == '9' && str[3] == '9' && str[1] == '9')
+	  {
 
+	  str[3]= '0';
+	  str[1] = '2';
+	  str[0] +=1;
+	  }
     }
-
 
 }
 
 int main ()
 {
-  ft_print_comb();
+  ft_print_comb2();
   printf("\n");
   return (0) ;
 }

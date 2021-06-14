@@ -5,30 +5,36 @@ void ft_print_comb2()
 {
   char str[] = "00 01";
   int loop = 0;
-  int count =0;
   while(loop == 0)
     {
-      if(str[4] == '9')
+      if (str[4] == '9' && str[3] == '9')
+	{
+	  str[0]='0';
+	  str[1] +=1;
+	  str[3] = str[0];
+	  str[4]= str[1]+1;
+
+	  if(str[4] == '9')
+	    {
+	      str[3]+=1;
+	      str[4]='0';
+	    }
+	  printf("%s ,", str);
+	  
+	}
+      
+      else if(str[4] == '9')
 	{
 	  str[3]+=1;
-	  str[4]+=(count+1);
-	  count+=1;
-	  printf("%c ,", str)
+	  str[4]='0';
+	  printf("%s ,", str);
 	}
-      else if (str[4] == '9' && str[3] == '9')
+      if (str[4] == '9' && str[3]=='9' && str[1] == '8' && str[0]== '9')
 	{
-	  str[3]= '0';
-	  str[4]+=(count+1) ;
-	  str[1] +=1;
-	  printf("%c ,", str)
+	  loop+=1;
 	}
-	else if (str[4] == '9' && str[3] == '9' && str[1] == '9')
-	  {
-
-	  str[3]= '0';
-	  str[1] = '2';
-	  str[0] +=1;
-	  }
+      str[4]+=1;
+      printf("%s ,", str);
     }
 
 }

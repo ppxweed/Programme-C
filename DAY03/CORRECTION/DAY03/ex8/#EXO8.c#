@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int Length(char *str)
+{
+}
+
+
+int main ()
+{
+
+  printf("\n");
+  return (0) ;
+}

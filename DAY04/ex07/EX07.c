@@ -4,7 +4,7 @@ int ft_is_prime(int nb)
 {
   int i = 0;
   int res = 1;
-  if(nb == 0 || nb == 1)
+  if(nb == 0 || nb == 1 || nb < 0)
     {
       return 0;
     }
@@ -21,9 +21,12 @@ int ft_is_prime(int nb)
 
 int ft_find_next_prime(int nb)
 {
-  int res =0;
-  int test =0;
+  int res = 0;
+  int test = 0;
   test = nb+1;
+  if (ft_is_prime(nb) == 1) {
+    return nb;
+  }
   while(ft_is_prime(test) != 1)
     {
       test+=1;
@@ -35,19 +38,25 @@ int ft_find_next_prime(int nb)
 
 int main()
 {
-  int index = 2;
-  int res = 0;
-  if(index >= 0 || index <= 2147483647)
-    {
-      res =(ft_find_next_prime(index));
-      printf("%d ", res);
-      printf("\n");
-      return res;
-    }
+  int numbers[] = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101};
+  int i = 0;
+  int j = 0; 
   
-  else
-    {
-      return 0; //return ERREUR
+  printf("Res: %i || Expected: %i \n", ft_find_next_prime(-1), 2);
+  printf("Res: %i || Expected: %i \n", ft_find_next_prime(-123), 2);
+
+  while (i <= 100) {
+    printf("i: %i || Res: %i || Expected: ", i, ft_find_next_prime(i));
+
+    if (i == numbers[j]) {
+      printf("%i\n", numbers[j]);
+      j++;
+    } else {
+      printf("%i\n", numbers[j]);
     }
+    i++;
+  }
+
+  return 0;
   
 }

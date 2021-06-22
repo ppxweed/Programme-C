@@ -4,6 +4,10 @@
 
 int ft_recursive_power(int nb, int power)
 {
+  if(power < 0)
+  {
+    return 0;
+  }
   if(power == 0)
     {
       return 1;
@@ -16,20 +20,25 @@ int ft_recursive_power(int nb, int power)
 
 int main()
 {
-  int nb = 1;
-  int power = 3;
-  int res = 0;
-  if(nb >= 0 || nb <= 2147483647)
-    {
-      res =(ft_recursive_power(nb, power));
-      printf("%d ", res);
-      printf("\n");
-      return res;
-    }
-  
-  else
-    {
-      return 0; //return ERREUR
-    }
-  
+  printf("Res: %i || Expected: %i \n", ft_recursive_power(0, 1), 0);
+  printf("Res: %i || Expected: %i \n", ft_recursive_power(1, 1), 1);
+  printf("Res: %i || Expected: %i \n", ft_recursive_power(10, 1), 10);
+  printf("Res: %i || Expected: %i \n", ft_recursive_power(-4, 1), -4);
+
+  printf("Res: %i || Expected: %i \n", ft_recursive_power(0, 2), 0);
+  printf("Res: %i || Expected: %i \n", ft_recursive_power(1, 2), 1);
+  printf("Res: %i || Expected: %i \n", ft_recursive_power(10, 2), 100);
+  printf("Res: %i || Expected: %i \n", ft_recursive_power(-4, 2), 16);
+
+  printf("Res: %i || Expected: %i \n", ft_recursive_power(0, -1), 0);
+  printf("Res: %i || Expected: %i \n", ft_recursive_power(1, -3), 0);
+
+  printf("Res: %i || Expected: %i \n", ft_recursive_power(0, 5), 0);
+  printf("Res: %i || Expected: %i \n", ft_recursive_power(1, 5), 1);
+  printf("Res: %i || Expected: %i \n", ft_recursive_power(10, 5), 100000);
+  printf("Res: %i || Expected: %i \n", ft_recursive_power(-4, 5), -1024);
+
+
+  printf("\n");
+  return 0;
 }

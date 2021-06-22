@@ -7,6 +7,10 @@ int ft_fibonacci(int index)
   int nb1 =0;
   int nb2 = 1;
   int res  = 0;
+
+  if (index < 0) {
+    return -1;
+  } 
   if (index < 2)
     {
       return (index); 
@@ -36,19 +40,16 @@ int ft_fibonacci(int index)
 
 int main()
 {
-  int index = 34;
-  int res = 0;
-  if(index >= 0 || index <= 2147483647)
-    {
-      res =(ft_fibonacci(index));
-      printf("%d ", res);
-      printf("\n");
-      return res;
-    }
-  
-  else
-    {
-      return 0; //return ERREUR
-    }
-  
+  printf("Res: %i || Expected: %i \n", ft_fibonacci(-1), -1);
+  printf("Res: %i || Expected: %i \n", ft_fibonacci(-356), -1);
+  int i;
+
+  i = 0;
+
+  while (i <= 20) {
+    printf("Index: %i|| Res: %i \n", i, ft_fibonacci(i));
+
+    i++;
+  }
+  return 0;
 }

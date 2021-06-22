@@ -1,7 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <EX02.h>
-
 
 int ft_iterative_power(int nb, int power)
 {
@@ -24,20 +22,25 @@ int ft_iterative_power(int nb, int power)
 
 int main()
 {
-  int nb = 5;
-  int power = 2;
-  int res = 0;
-  if(nb >= 0 || nb <= 2147483647)
-    {
-      res =(ft_iterative_power(nb, power));
-      printf("%d ", res);
-      printf("\n");
-      return res;
-    }
-  
-  else
-    {
-      return 0; //return ERREUR
-    }
-  
+  printf("Res: %i || Expected: %i \n", ft_iterative_power(0, 1), 0);
+  printf("Res: %i || Expected: %i \n", ft_iterative_power(1, 1), 1);
+  printf("Res: %i || Expected: %i \n", ft_iterative_power(10, 1), 10);
+  printf("Res: %i || Expected: %i \n", ft_iterative_power(-4, 1), -4);
+
+  printf("Res: %i || Expected: %i \n", ft_iterative_power(0, 2), 0);
+  printf("Res: %i || Expected: %i \n", ft_iterative_power(1, 2), 1);
+  printf("Res: %i || Expected: %i \n", ft_iterative_power(10, 2), 100);
+  printf("Res: %i || Expected: %i \n", ft_iterative_power(-4, 2), 16);
+
+  printf("Res: %i || Expected: %i \n", ft_iterative_power(0, -1), 0);
+  printf("Res: %i || Expected: %i \n", ft_iterative_power(1, -3), 0);
+
+  printf("Res: %i || Expected: %i \n", ft_iterative_power(0, 5), 0);
+  printf("Res: %i || Expected: %i \n", ft_iterative_power(1, 5), 1);
+  printf("Res: %i || Expected: %i \n", ft_iterative_power(10, 5), 100000);
+  printf("Res: %i || Expected: %i \n", ft_iterative_power(-4, 5), -1024);
+
+
+  printf("\n");
+  return 0;
 }

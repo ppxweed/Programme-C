@@ -38,9 +38,16 @@ int ft_str_is_uppercase(char *str)
 int main()
 {
   char *res = "";
-  int result;
-  result = ft_str_is_uppercase(res);
-  printf("%d", result);
-  printf("\n");
+  printf("The actual result : %i \n", ft_str_is_uppercase(res)); // 1
+
+  char *res1 = "azeze123";
+  printf("The actual result : %i \n", ft_str_is_uppercase(res1));// 0 
+
+  char *res2 = "124";
+  printf("The actual result : %i \n", ft_str_is_uppercase(res2));// 0
+
+
+  char *res3 = "AZRZD";
+  printf("The actual result : %i \n", ft_str_is_uppercase(res3));// 1
   return 0;
 }

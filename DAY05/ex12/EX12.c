@@ -38,9 +38,17 @@ int ft_str_is_printable(char *str)
 int main()
 {
   char *res = "dzap^:)";
-  int result;
-  result = ft_str_is_printable(res);
-  printf("%d", result);
-  printf("\n");
+  printf("The actual result : %i \n", ft_str_is_printable(res)); // 1
+
+  char *res1 = " ";
+  printf("The actual result : %i \n", ft_str_is_printable(res1));// 1
+
+  char *res2 = "dzaplkrr;$ẑel$azl:eù;r&é";
+  printf("The actual result : %i \n", ft_str_is_printable(res2));// 0
+
+  char *res3 = "";
+  printf("The actual result : %i \n", ft_str_is_printable(res3));// 1
+
+  
   return 0;
 }

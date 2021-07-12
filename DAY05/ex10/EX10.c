@@ -38,9 +38,18 @@ int ft_str_is_lowercase(char *str)
 int main()
 {
   char *res = "sal32341za";
-  int result;
-  result = ft_str_is_lowercase(res);
-  printf("%d", result);
-  printf("\n");
+  printf("The actual result : %i \n", ft_str_is_lowercase(res) ); // 0
+
+  char *res1 = " ";
+  printf("The actual result : %i \n", ft_str_is_lowercase(res1) );// 0
+
+  char *res2 = "21";
+  printf("The actual result : %i \n", ft_str_is_lowercase(res2) );// 0
+
+  char *res3 = "AZREAZE";
+  printf("The actual result : %i \n", ft_str_is_lowercase(res3) );// 0
+
+  char *res4 = "salza";
+  printf("The actual result : %i \n", ft_str_is_lowercase(res4) );// 1
   return 0;
 }

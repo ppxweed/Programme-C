@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int lenght(char *str)
 {
@@ -39,15 +40,20 @@ char *ft_strupcase(char *str)
       
     }
   str = test;
+  str[i] = '\0';
   return str;
 }
 
 int main()
 {
   char *test = "bonjour toi";
-  char *res;
-  res = ft_strupcase(test);
-  printf("%s", res);
-  printf("\n");
+  printf(" The actual result : %s \n", ft_strupcase(test)); //The expected result : BONJOUR TOI
+
+  char *test1 = " ";
+  printf(" The actual result : %s \n", ft_strupcase(test1)); //The expected result :
+
+   char *test2 = "HELLO";
+  printf(" The actual result : %s \n", ft_strupcase(test2)); //The expected result : HELLO
+  
   return 0;
 }

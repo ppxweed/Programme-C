@@ -21,30 +21,37 @@ char  *ft_strcapitalize(char *str)
   int tmp = 0;
   while(str[i] != '\0')
     {
-      printf("%i \n", str[i]-32);
-      if(i == 0 || (str[i-1]-32 ==0) )
+      if(i == 0 || str[i-1] == ' ')  
 	{
 	  tmp = str[i]+'0';
 	  tmp-=32;
 	  res[i] = tmp-'0';
 	  i+=1;
 	}
-      else
+      else  //REGLE TOUJOURS PAS LE PROBLEME
 	{
 	  res[i] = str[i];
 	  i+=1;
 	}
     }
   str = res;
+  str[i] = '\0';
   return str;
 }
 
 int main()
 {
-  char *test = "comment tu vas ? en vrai !";
-  char *res;
-  res = ft_strcapitalize(test);
-  printf("%s", res);
-  printf("\n");
+  char *test = "comment+tu+vas ?en vrai !";
+  printf("The expect result : %s \n", ft_strcapitalize(test));// Comment+Tu+Vas ?En Vrai !
+
+ char *test2 = "!";
+ printf("The expect result : %s \n", ft_strcapitalize(test2)); //  !
+
+ char *test3 = "AZRAETFDFS";
+ printf("The expect result : %s \n", ft_strcapitalize(test2)); //  AZRAEDFDFS
+
+ char *test4 = " ";
+ printf("The expect result : %s \n", ft_strcapitalize(test4)); //   
+
   return 0;
 }

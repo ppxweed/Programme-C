@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int lenght(char *str)
 {
@@ -44,11 +45,27 @@ int ft_strcmp(char *s1, char *s2)
 
 int main()
 {
-  char *test = "BONJOUR TOI";
-  char *test2 = "BONJOUR TO";
-  int res ;
-  res = ft_strcmp(test,test2);
-  printf("%i", res);
-  printf("\n");
+  char *test = "DONJOUR TOI";
+  char *test2 = "A";
+
+  printf("The result expected : %i || The actual result : %i \n",strcmp(test,test2), ft_strcmp(test,test2));
+
+  char *test1 = "BONJOUR TOI";
+  char *test3 = "";
+
+  printf("The result expected : %i || The actual result : %i \n",strcmp(test1,test3), ft_strcmp(test1,test3));
+
+  char *test5 = " ";
+  char *test4 = "BONJOUR TO";
+
+  printf("The result expected : %i || The actual result : %i \n",strcmp(test5,test4), ft_strcmp(test5,test4));
+
+
+  char *test6 = " ";
+  char *test7 = "3 ";
+
+  printf("The result expected : %i || The actual result : %i \n",strcmp(test6,test7), ft_strcmp(test6,test7));
+  
+  
   return 0;
 }

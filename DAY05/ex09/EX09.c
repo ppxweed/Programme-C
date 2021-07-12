@@ -37,10 +37,21 @@ int ft_str_is_numeric(char *str)
 
 int main()
 {
-  char *res = "";
-  int result;
-  result = ft_str_is_numeric(res);
-  printf("%d", result);
-  printf("\n");
+  char *res = "123143243R";
+  printf("The actual result is : %i \n",ft_str_is_numeric(res)); //0
+
+
+    char *res1 = "AZRdezz";
+    printf("The actual result is : %i \n",ft_str_is_numeric(res1));//0
+
+
+
+    char *res2 = " ";
+    printf("The actual result is : %i \n",ft_str_is_numeric(res2));//0
+
+
+
+    char *res3 = "12215";
+    printf("The actual result is : %i \n",ft_str_is_numeric(res3));//1
   return 0;
 }

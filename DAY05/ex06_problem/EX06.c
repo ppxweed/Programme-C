@@ -39,15 +39,19 @@ char *ft_strlowcase(char *str)
       
     }
   str = test;
+  str[i] = '\0';
   return str;
 }
 
 int main()
 {
   char *test = "BONJOUR TOI";
-  char *res;
-  res = ft_strlowcase(test);
-  printf("%s", res);
-  printf("\n");
+  char *test2 = " ";
+  char *test3 = "bonjour";
+  printf("The actual result : %s \n", ft_strlowcase(test));
+  printf("The actual result : %s \n", ft_strlowcase(test2));
+  printf("The actual result : %s \n", ft_strlowcase(test3));
+
+
   return 0;
 }

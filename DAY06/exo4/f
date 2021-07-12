@@ -1,0 +1,13 @@
+  for(i= 1; i < argc; i++ )
+    {
+      j_len = lenght(argv[i]);
+      for(j= 0; j < j_len ; j++ )
+	{
+	  if(argv[i][j]+'0' < argv[i+1][j]+'0')
+	    {
+	      tmp = argv[i];
+	      argv[i] = argv[i+1];
+	      argv[i+1] = tmp;
+	    }
+	}
+    }

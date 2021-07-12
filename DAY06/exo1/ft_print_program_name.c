@@ -1,13 +1,15 @@
 #include <stdio.h>
 
+void ft_putchar(char str);
+
 int main (int argc, char **argv)
 {
-  int i = 1;
-  while(i < argc)
+  int i = 0;
+  while(argv[0][i] != '\0')
     {
-      ft_putstr(argv[i] );
-      ft_putstr('\n');
-	i+=1;
+      ft_putchar(argv[0][i]);
+      i+=1;
     }
+  printf("\n");
   return 0;
 }

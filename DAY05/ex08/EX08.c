@@ -38,9 +38,17 @@ int ft_str_is_alpha(char *str)
 int main()
 {
   char *res = "))";
-  int result;
-  result = ft_str_is_alpha(res);
-  printf("%d", result);
-  printf("\n");
+  printf("The actual result is : %i \n", ft_str_is_alpha(res)); // 0
+
+
+  char *res1 = "aefRR";
+  printf("The actual result is : %i \n", ft_str_is_alpha(res1));// 1
+  
+
+  char *res2 = " ";
+  printf("The actual result is : %i \n", ft_str_is_alpha(res2));// 0
+
+   char *res4 = "42363265";
+   printf("The actual result is : %i \n", ft_str_is_alpha(res4));// 0
   return 0;
 }

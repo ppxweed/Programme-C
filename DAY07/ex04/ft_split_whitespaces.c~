@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int Lenght(char *str)
+{
+  int res =0;
+  int i =0;
+  while (str[i] != '\0')
+    {
+      res+=1;
+      i+=1;
+    }
+  return res;
+}
+
+
+
+char **ft_split_whitespaces(char *str)
+{
+  char charac;
+  char *string;
+  int i = 0;
+  int j = 0;
+  int l = Lenght(str);
+  string = &charac;
+  char **res = &string;
+  *res = (char* )malloc(l*sizeof(str));
+  while(i < l)
+    {
+      if(str[i] != ' ' || str[i] != '\n' || str[i]+'0' != 13 )
+	{
+	  res[j][i] = str[i];
+	  i+=1;
+	}
+      else 
+	{
+	  while (str[i] == ' ' && str[i] != '\0') 
+	    i++;
+	  j+=1;
+	}
+    }
+  res[j] = '\0';
+  return res;
+}
+
+
+int main()
+{
+  char str[] = "salut à tous je suis la pourdire pas bonjour";
+  char **res = ft_split_whitespaces(str);
+  printf("[");
+  int i = 0;
+  int j = 0;
+  while(j < (sizeof(res)/sizeof(char)))
+    {
+      for(i= 0 ; i<Lenght(res[j]);i++)
+	{
+	  if(i = Lenght(res[j]-1))
+	    {
+	      printf("%c ,",res[j][i]);
+	    }
+	  printf("%c",res[j][i]);
+	}
+      j+=1;
+    }
+  printf("]");
+  free(*res);
+  return 0;
+}
+

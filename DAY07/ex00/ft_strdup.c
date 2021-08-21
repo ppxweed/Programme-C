@@ -41,18 +41,18 @@ int main()
 
 
   char *source1 = " ";
-  char *res1 = ft_strdup(source);
+  char *res1 = ft_strdup(source1);
 
   printf("The expected result : %s || The actual result : %s \n", strdup(source1), res1);
 
 
    char *source2 = "-1";
-  char *res2 = ft_strdup(source);
+  char *res2 = ft_strdup(source2);
 
   printf("The expected result : %s || The actual result : %s \n", strdup(source2), res2);
 
   char *source3 = "!BONJOUR ù⁾ç";
-  char *res3 = ft_strdup(source);
+  char *res3 = ft_strdup(source3);
 
   printf("The expected result : %s || The actual result : %s \n", strdup(source3), res3);
 

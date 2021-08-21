@@ -32,7 +32,6 @@ char *ft_concat_params(int argc, char *argv)
       j+=1;
     }
   res[i] = '\0';
-  free(res);
   return res;
 }
 
@@ -41,6 +40,6 @@ int main(int argc, char *argv)
 {
   char * res = ft_concat_params(argc,argv);
   printf("The actual result is : %s \n", res);
-  
+  free(res);
   return 0;
 }

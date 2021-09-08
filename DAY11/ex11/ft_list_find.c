@@ -26,7 +26,7 @@ void print_list(t_list *list)
 
 t_list* ft_list_find(t_list* begin_list, void* data_ref, int(*cmp)())
 {
-  t_list *list;
+  t_list *list = NULL;
   list = begin_list;
   if(list != NULL)
     {
@@ -48,8 +48,8 @@ int cmp()
 
 int main()
 {
-  t_list *list;
-  t_list *res;
+  t_list *list =NULL;
+  t_list *res =NULL;
   list =  add_link(list,"vas");
   list =  add_link(list,"tu");
   list = add_link(list,"bien");
@@ -57,16 +57,16 @@ int main()
   print_list(res);
 
 
-  t_list *list1;
-  t_list *res1;
+  t_list *list1 =NULL;
+  t_list *res1 =NULL;
   list1 =  add_link(list1,"vas");
   list1 =  add_link(list1,"tu");
   list1 = add_link(list1,"bien");
   res1 = ft_list_find(list1,"",cmp);
   print_list(res1);
 
-  t_list *list2;
-  t_list *res2;
+  t_list *list2 =NULL;
+  t_list *res2 =NULL;
   list2 =  add_link(list2,"vas");
   list2 =  add_link(list2,"tu");
   list2 = add_link(list2,"bien");
@@ -74,7 +74,7 @@ int main()
   print_list(res2);
 
   t_list *list3= NULL;
-  t_list *res3;
+  t_list *res3 =NULL;
   res3 = ft_list_find(list3,"vas",cmp);
   print_list(res3);
   

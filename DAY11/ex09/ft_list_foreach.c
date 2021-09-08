@@ -25,7 +25,7 @@ void print_list(t_list *list)
 }
 void ft_list_foreach(t_list *begin_list, void(*f)(void*))
 {
-  t_list *list_ptr;
+  t_list *list_ptr = NULL;
   list_ptr= begin_list;
   if(list_ptr != NULL)
     {
@@ -47,7 +47,7 @@ void add(void *data)
 
 int main()
 {
-  t_list *list;
+  t_list *list = NULL;
   list = add_link(list, "vas");
   list = add_link(list, "tu");
   print_list(list);

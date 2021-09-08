@@ -26,9 +26,9 @@ void print_list(t_list *list)
 
 void ft_list_reverse(t_list **begin_list)
 {
-  t_list * list;
-  t_list * tmp;
-  t_list *tmp2;
+  t_list * list = NULL;
+  t_list * tmp= NULL;
+  t_list *tmp2 = NULL;
   list = malloc(sizeof(t_list));
   list =*begin_list;
   if(list != NULL || list->next != NULL)
@@ -51,7 +51,7 @@ void ft_list_reverse(t_list **begin_list)
 
 int main()
 {
-  t_list *list;
+  t_list *list= NULL;
   list  = add_link(list,"yo");
   list  = add_link(list,"tu");
   list  = add_link(list,"vas");
@@ -60,27 +60,27 @@ int main()
   print_list(list);
   ft_list_reverse(&list);
   print_list(list);
+  printf("\n");
 
-
-  t_list *list1;
+  t_list *list1 = NULL;
   list1  = add_link(list1,"1");
   list1  = add_link(list1,"2");
   list1  = add_link(list1,"3");
   list1 = add_link(list1,"4");
 
   print_list(list1);
-  ft_list_reverse(&list1); //Probleme d'affichage
+  ft_list_reverse(&list1); 
   print_list(list1);
+  printf("\n");
 
-
-  t_list *list2;
+  t_list *list2= NULL;
   list2  = add_link(list2,"1");
   list2  = add_link(list2,"2");
   list2  = add_link(list2,"3");
   list2 = add_link(list2,"4");
 
   print_list(list2);
-  ft_list_reverse(&list2); //Probleme d'affichage
+  ft_list_reverse(&list2); 
   print_list(list2);
 
   

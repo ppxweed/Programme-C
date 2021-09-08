@@ -56,7 +56,7 @@ int main()
   t_list *l2 = NULL;
   l1 = add_link(l1,"tout");
   l1 = add_link(l1,"vas");
-  l1 = add_link(l1,"tu");
+  l1 = add_link(l1,"tu"); //Perdu dans le merge !
   l2 = add_link(l2," ?!");
   l2 = add_link(l2,"bien");
 

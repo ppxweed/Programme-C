@@ -25,7 +25,7 @@ void print_list(t_list *list)
 }
 void ft_list_foreach_if(t_list *begin_list, void(*f)(void*), void* data_ref, int (*cmp)())
 {
-  t_list *list_ptr;
+  t_list *list_ptr = NULL;
   list_ptr= begin_list;
   if(list_ptr != NULL)
     {
@@ -50,7 +50,7 @@ void *add(void *data)
 int *compare()
 {
   int res = 0;
-  if(data != data_ref)
+  if(data != data_ref) //???????????????
     {
       return 1;
     }
@@ -61,7 +61,7 @@ int *compare()
 
 int main()
 {
-  t_list *list;
+  t_list *list= NULL;
   list = add_link(list, "vas");
   list = add_link(list, "tu");
   print_list(list);

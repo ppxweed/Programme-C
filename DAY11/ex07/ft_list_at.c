@@ -56,8 +56,8 @@ t_list * ft_list_at(t_list *begin_list, unsigned int a)
 
 int main()
 {
-  t_list *list;
-  t_list *res;
+  t_list *list = NULL;
+  t_list *res = NULL;
   list = add_link(list, "gogo");
   list = add_link(list, "gigi");
   list = add_link(list, "gUgu");
@@ -65,8 +65,8 @@ int main()
   res = ft_list_at(list,3);
   print_list(res);
 
-  t_list *list1;
-  t_list *res1;
+  t_list *list1 = NULL;
+  t_list *res1= NULL;
   list1 = add_link(list1, "gogo");
   list1 = add_link(list1, "gigi");
   list1 = add_link(list1, "gUgu");
@@ -76,7 +76,7 @@ int main()
 
 
   t_list *list2 = NULL;
-  t_list *res2;
+  t_list *res2 = NULL;
   res2 = ft_list_at(list2,0);
   print_list(res2);
   

@@ -28,8 +28,8 @@ void print_list(t_list *list)
 
 t_list* ft_list_remove_if(t_list** begin_list, void* data_ref, int(*cmp)())
 {
-  t_list *list;
-  t_list *tmp;
+  t_list *list= NULL;
+  t_list *tmp= NULL;
   list = *begin_list;
   if(list != NULL)
     {
@@ -58,33 +58,33 @@ int *cmp()
 
 int main()
 {
-  t_list *list;
-  t_list *res;
+  t_list *list= NULL;
+  t_list *res= NULL;
   list =  add_link(list,"vas");
   list =  add_link(list,"tu");
   list = add_link(list,"bien");
-  res = ft_list_find(list,"bien",cmp);
+  res = ft_remove_if(list,"bien",cmp);
   print_list(res);
 
 
-  t_list *list1;
-  t_list *res1;
+  t_list *list1= NULL;
+  t_list *res1= NULL;
   list1 =  add_link(list1,"vas");
   list1 =  add_link(list1,"tu");
   list1 = add_link(list1,"bien");
-  res1 = ft_list_find(list1,"",cmp);
+  res1 = ft_remove_if(list1,"",cmp);
   print_list(res1);
 
-  t_list *list2;
-  t_list *res2;
+  t_list *list2= NULL;
+  t_list *res2 = NULL;
   list2 =  add_link(list2,"vas");
   list2 =  add_link(list2,"tu");
   list2 = add_link(list2,"bien");
-  res2 = ft_list_find(list2,"!!",cmp);
+  res2 = ft_removre_if(list2,"!!",cmp);
   print_list(res2);
 
   t_list *list3= NULL;
-  t_list *res3;
-  res3 = ft_list_find(list3,"vas",cmp);
+  t_list *res3 = NULL;
+  res3 = ft_remove_if(list3,"vas",cmp);
   print_list(res3);
 }

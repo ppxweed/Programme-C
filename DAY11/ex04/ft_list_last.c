@@ -52,7 +52,7 @@ void print_list(t_list *list)
 
 int main()
 {
-  t_list *res;
+  t_list *res = NULL;
   t_list *list =NULL;
   list = add_link(list, "salut");
   list = add_link(list,"bonjour");
@@ -60,7 +60,7 @@ int main()
   res = ft_list_last(list);
   print_list(res);
   
-  t_list *res1;
+  t_list *res1= NULL;
   t_list *list1 =NULL;
   list1 = add_link(list1, "");
   list1 = add_link(list1, "salut");
@@ -69,7 +69,7 @@ int main()
   res1 = ft_list_last(list1);
   print_list(res1);
 
-  t_list *res2;
+  t_list *res2= NULL;
   t_list *list2 =NULL;
   list2 = add_link(list2,"v");
   list2 = add_link(list2, "salut");
@@ -78,7 +78,7 @@ int main()
   res2 = ft_list_last(list2);
   print_list(res2);
 
-  t_list *res3;
+  t_list *res3 = NULL;
   t_list *list3 =NULL;
   res3 = ft_list_last(list3);
   print_list(res3);

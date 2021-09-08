@@ -1,6 +1,8 @@
 #include "ft_list.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+
+
 
 //////////////////////////////////////////////////////////////////
 t_list* add_link(t_list *lis , char *data)
@@ -23,35 +25,27 @@ void print_list(t_list *list)
       list = list->next;
     }
 }
-void ft_list_foreach(t_list *begin_list, void(*f)(void*))
+
+
+void ft_list_sort(t_list **begin_list, int(*cmp)())
 {
-  t_list *list_ptr;
-  list_ptr= begin_list;
-  if(list_ptr != NULL)
+  t_list* list = NULL;
+  t_list * tmp = NULL;
+  t_list * tmp2 = NULL;
+  if(*begin_list != NULL)
     {
-      while(list_ptr->next != NULL)
+      while(*begin_list->next != NULL)
 	{
-	  (*f)(list_ptr->data);
-	  list_ptr= list_ptr->next;
+	  if(cmp(*begin_list->data,*begin_list->next->data) == 1) //Si pas trié
+	    {
+	      tmp = *begin_list->data;
+	      tmp2 = tmp;
+	      tmp = *begin_list->next->data;
+	      list->next = tmp2;
+	      list = list->next;
+	      list->next = tmp;
+	    }
+	  
 	}
     }
-  
-}
-
-
-void add(void *data)
-{
-  data = "bien";
-}
-
-
-int main()
-{
-  t_list *list;
-  list = add_link(list, "vas");
-  list = add_link(list, "tu");
-  print_list(list);
-  ft_list_foreach(list,add);
-  print_list(list);
-  return 0;
 }

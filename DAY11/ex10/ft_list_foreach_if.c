@@ -23,7 +23,7 @@ void print_list(t_list *list)
       list = list->next;
     }
 }
-void ft_list_foreach(t_list *begin_list, void(*f)(void*))
+void ft_list_foreach_if(t_list *begin_list, void(*f)(void*), void* data_ref, int (*cmp)())
 {
   t_list *list_ptr;
   list_ptr= begin_list;
@@ -31,7 +31,10 @@ void ft_list_foreach(t_list *begin_list, void(*f)(void*))
     {
       while(list_ptr->next != NULL)
 	{
-	  (*f)(list_ptr->data);
+	  if((*cmp)(list_ptr->data,data_ref)==0)
+	    {
+	      (*f)(list_ptr->data);
+	    }
 	  list_ptr= list_ptr->next;
 	}
     }
@@ -39,9 +42,20 @@ void ft_list_foreach(t_list *begin_list, void(*f)(void*))
 }
 
 
-void add(void *data)
+void *add(void *data)
 {
-  data = "bien";
+  data = "lol";
+}
+
+int *compare()
+{
+  int res = 0;
+  if(data != data_ref)
+    {
+      return 1;
+    }
+  
+  return res;
 }
 
 
@@ -51,7 +65,7 @@ int main()
   list = add_link(list, "vas");
   list = add_link(list, "tu");
   print_list(list);
-  ft_list_foreach(list,add);
+  ft_list_foreach_if(list,add,"vas",compare);
   print_list(list);
   return 0;
 }

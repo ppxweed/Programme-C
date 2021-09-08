@@ -1,6 +1,8 @@
 #include "ft_list.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+
+
 
 //////////////////////////////////////////////////////////////////
 t_list* add_link(t_list *lis , char *data)
@@ -23,35 +25,40 @@ void print_list(t_list *list)
       list = list->next;
     }
 }
-void ft_list_foreach(t_list *begin_list, void(*f)(void*))
+
+
+void ft_list_merge(t_list **begin_list1, t_list *begin_list2)
 {
-  t_list *list_ptr;
-  list_ptr= begin_list;
-  if(list_ptr != NULL)
+  t_list *list = *begin_list1;
+  if(list != NULL)
     {
-      while(list_ptr->next != NULL)
+      while(list->next != NULL)
 	{
-	  (*f)(list_ptr->data);
-	  list_ptr= list_ptr->next;
+	  list->next = begin_list2;
+	  list = list->next;
 	}
     }
-  
+  else
+    {
+      list = begin_list2;
+    }
+  return list;
 }
 
-
-void add(void *data)
-{
-  data = "bien";
-}
 
 
 int main()
 {
-  t_list *list;
-  list = add_link(list, "vas");
-  list = add_link(list, "tu");
-  print_list(list);
-  ft_list_foreach(list,add);
-  print_list(list);
+  t_list *l1;
+  t_list *l2;
+  l1 = add_link(l1,"vas");
+  l1 = add_link(l1,"tu");
+  l2 = add_link(l2,"bien");
+  l2 = add_link(l2," ?!");
+
+  ft_list_merge(&l1,l2);
+  print_list(l1);
+
   return 0;
+  
 }

@@ -1,0 +1,16 @@
+#include "ft_list.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+
+void ft_list_clear(t_list *begin_list)
+{
+  
+}
+
+
+int main()
+{
+  t_list *list = NULL;
+  list = add_link()
+}

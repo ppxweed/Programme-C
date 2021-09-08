@@ -1,0 +1,76 @@
+#include "list.h"
+#include <stdlib.h>
+#include <unistd.h>
+
+
+//////////////////////////////////////////////////////////////////
+t_list* add_link(t_list *lis , char *data)
+{
+  t_list *list;
+  list = malloc(sizeof(t_list));
+  if(list)
+    {
+      list->data = data;
+      list->next =lis;
+    }
+  return list;
+}
+/////////////////////////////////////////////////////////////////
+
+
+
+int ft_putchar(char* c)
+{
+  write(1,&c,1);
+}
+
+t_list *ft_list_last(t_list *begin_list)
+{
+  t_list* list;
+  list = begin_list;
+  if(list != NULL)
+    {
+      while(list->next != NULL)
+	{
+	  list= list->next;
+	}
+      return list;
+    }
+  return begin_list;
+}
+void print_list(t_list *list)
+{
+  while(list)
+    {
+      printf("%s", list->data);
+      list = list->next;
+    }
+}
+
+
+int main()
+{
+  t_list *res;
+  t_list *list =NULL;
+  list = add_link(list, "salut");
+  list = add_link(list,"bonjour");
+  list = add_link(list,"12234");
+  res = ft_list_last(list);
+  
+
+  int res1 = 0;
+  t_list *list1 =NULL;
+  list1 = add_link(list1, "");
+
+  int res2 = 0;
+  t_list *list2 =NULL;
+
+
+  int res3 = 0;
+  t_list *list3 =NULL;
+  list3 = add_link(list3, "124324TFSD32ETRT");
+
+  return 0;
+}
+
+

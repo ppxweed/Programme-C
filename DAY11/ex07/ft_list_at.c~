@@ -1,0 +1,27 @@
+#include "ft_list.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+
+t_list * ft_list_at(t_list *begin_list, int a)
+{
+  t_list *list;
+  int i = 0;
+  if(list != NULL)
+    {
+      while(list->next != NULL)
+	{
+	  if(i == a)
+	    {
+	      return list;
+	    }
+	  else
+	    {
+	      list = list->next;
+	      i++;
+	    }
+	}
+      return NULL;
+    }
+  return list;
+}
